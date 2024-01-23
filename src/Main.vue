@@ -45,9 +45,8 @@
   });
 
   const sortOptions = ref([
-    {value: 'id', name: 'По индентифікатору'},
-    {value: 'email', name: 'По email'},
-    {value: 'first_name', name: 'По имені'},
+    {value: 'email', name: 'По електронній пошті'},
+    {value: 'first_name', name: 'По імені'},
     {value: 'last_name', name: 'По прізвищу'}
   ]);
 
