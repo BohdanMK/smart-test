@@ -39,6 +39,9 @@
                 6. Адаптив під мобілки.
             </li>
             <li>
+                Хочу зробити: рефакторинг існуючого коду...
+            </li>
+            <li>
                 <a  class="modal__block-list-link"
                     href="https://docs.google.com/document/d/17FRWaq_unRVi89wNUIwIOUCY8yystCaLhl-7joW_y4U/edit?usp=sharing"> Посилання на Т3 </a>
             </li>
