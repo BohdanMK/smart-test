@@ -149,7 +149,7 @@
               last_name: response.data.last_name,
               avatar: response.data.avatar,
               tel: response.data.tel,
-              address: response.data.address  // виправлено: використовуйте response.data.address
+              address: response.data.address  
           };
 
           // Оновлення користувача в userList
