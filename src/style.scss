@@ -8,6 +8,16 @@ $main-font: 'Nunito', sans-serif;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: none;
+  overscroll-behavior: none;
+}
+
+body, html {
+  min-height: 100%;
+  overscroll-behavior: none;
+}
+
 body {
   background: $bg-color;
 
