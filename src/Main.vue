@@ -6,6 +6,7 @@
 
   import UserList from '@/components/UserList.vue';
   import InstructionModal from '@/components/InstructionModal.vue';
+  import MenuBar from '@/ui/menu/MenuBar.vue';
 
   // work with modal block
   const modalIsOpen = ref(false);
@@ -149,7 +150,7 @@
               last_name: response.data.last_name,
               avatar: response.data.avatar,
               tel: response.data.tel,
-              address: response.data.address  
+              address: response.data.address
           };
 
           // Оновлення користувача в userList
@@ -235,6 +236,7 @@
         </div>
       </div>
     </div>
+    <menu-bar></menu-bar>
     <Teleport to="#modal">
       <modal-form
         v-if="modalIsOpen"
