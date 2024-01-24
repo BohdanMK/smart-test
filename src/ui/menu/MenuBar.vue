@@ -55,7 +55,7 @@
         background: var(--white);
         position: -webkit-fixed;
         position: fixed;
-        bottom: 45px;
+        bottom: 0px;
         left: 0;
         z-index: 4;
     }
