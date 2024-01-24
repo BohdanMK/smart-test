@@ -28,6 +28,14 @@ body {
   margin: 0;
 }
 
+body #app {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+
 * {
 	padding: 0px;
 	margin: 0px;
