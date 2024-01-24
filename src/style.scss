@@ -17,6 +17,8 @@ body, html {
   min-height: 100%;
   scroll-behavior: none;
   overscroll-behavior: none;
+  -webkit-scroll-behavior: none;
+  -webkit-overscroll-behavior: none;
 }
 
 body {
@@ -28,12 +30,6 @@ body {
   margin: 0;
 }
 
-body #app {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
 
 
 * {
