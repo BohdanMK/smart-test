@@ -15,8 +15,8 @@ html {
 
 body, html {
   min-height: 100%;
-  position: fixed;
-  overflow: hidden;
+  scroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 body {
