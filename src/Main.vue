@@ -6,7 +6,7 @@
 
   import UserList from '@/components/UserList.vue';
   import InstructionModal from '@/components/InstructionModal.vue';
-  import MenuBar from '@/ui/menu/MenuBar.vue';
+
 
   // work with modal block
   const modalIsOpen = ref(false);
