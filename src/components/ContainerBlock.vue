@@ -21,7 +21,7 @@
         margin: 0 auto;
         padding: 20px 30px;
 
-        overflow: auto;
+
 
         background: $content-color;
 
