@@ -9,16 +9,16 @@ $main-font: 'Nunito', sans-serif;
 }
 
 html {
-  scroll-behavior: none;
-  overscroll-behavior: none;
+  // scroll-behavior: none;
+  // overscroll-behavior: none;
 }
 
 body, html {
-  min-height: 100vh;
-  scroll-behavior: none;
-  overscroll-behavior: none;
-  -webkit-scroll-behavior: none;
-  -webkit-overscroll-behavior: none;
+  // min-height: 100vh;
+  // scroll-behavior: none;
+  // overscroll-behavior: none;
+  // -webkit-scroll-behavior: none;
+  // -webkit-overscroll-behavior: none;
 }
 
 body {
