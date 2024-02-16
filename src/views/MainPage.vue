@@ -2,24 +2,29 @@
 
   import { ref, onMounted, watch, computed } from 'vue';
   import axios from 'axios';
+  import userList from "@/state/userList";
+  import totalPages from "@/state/totalPages";
+  import modalIsOpen from '@/state/modalState.js'
   import { BASE_URL } from '@/constants/api';
 
   import UserList from '@/components/UserList.vue';
   import InstructionModal from '@/components/InstructionModal.vue';
 
+  import getAllUsers from '@/hooks/getUsers.js';
+  import handleEditUser from '@/hooks/editUser.js';
+  import handleRemoveUser from '@/hooks/handleRemoveUser.js';
+  import handleAddUser from '@/hooks/handleAddUser.js';
+
 
   // work with modal block
-  const modalIsOpen = ref(false);
+
   const modalInstruction = ref(false);
 
   const openModal = () => {
       modalIsOpen.value = true;
   }
 
-  const closeModal = () => {
 
-    modalIsOpen.value = false;
-  }
 
   // instruction
   const toggleInsructionModal = () => {
@@ -52,18 +57,9 @@
   ]);
 
   // user list
-  const userList = ref([]);
-  const totalPages = ref(1);
 
-  const getAllUsers = async (page = 1) => {
-    try {
-      const response = await axios.get(`${BASE_URL}?page=${page}`);
-      totalPages.value = response.data.total_pages;
-      userList.value = response.data.data;
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
-  };
+
+
 
   // pagination
 
@@ -75,94 +71,7 @@
   };
 
   // remove user
-  const handleRemoveUser = async (userId) => {
 
-    try {
-      const response = await axios.delete(`${BASE_URL}/${userId}`);
-      console.log(response);
-      deleteUserById(userId);
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
-  };
-
-  const deleteUserById = (userId) => {
-    userList.value = userList.value.filter(user => user.id !== userId);
-  };
-
-  // add user
-  const handleAddUser = async (userData) => {
-    try {
-
-        const name = userData.value.name;
-        const email = userData.value.email;
-
-        const response = await axios.post('https://reqres.in/api/users', {
-            first_name: name,
-            email: email
-        });
-
-        console.log('Користувач успішно створений:', response.data);
-
-        const newUser = {
-            id: response.data.id,
-            first_name: response.data.first_name,
-            email: response.data.email,
-        };
-
-        userList.value.push(newUser);
-        closeModal();
-
-    } catch (error) {
-        console.error('Помилка при створенні користувача:', error);
-    }
-  };
-  // edit user
-  const handleEditUser = async (userData) => {
-    try {
-
-      const id = userData.value.id;
-
-      const name = userData.value.name;
-      const email = userData.value.email;
-      const soName = userData.value.soName;
-      const tel = userData.value.tel;
-      const address = userData.value.address;
-      const avatar = userData.value.avatar;
-
-      const response = await axios.put(`${BASE_URL}/${id}`, {
-          avatar: avatar,
-          first_name: name,
-          email: email,
-          last_name:soName,
-          tel: tel,
-          address: address
-
-
-      });
-
-      console.log('Користувач успішно обновлений:', response.data);
-
-        const updatedUser = {
-              id: userData.value.id,
-              first_name: response.data.first_name,
-              email: response.data.email,
-              last_name: response.data.last_name,
-              avatar: response.data.avatar,
-              tel: response.data.tel,
-              address: response.data.address
-          };
-
-          // Оновлення користувача в userList
-        const index = userList.value.findIndex(user => user.id === id);
-        if (index !== -1) {
-            userList.value.splice(index, 1, updatedUser);
-        }
-
-      } catch (error) {
-      console.error('Помилка при створенні користувача:', error);
-      }
-  };
 
   onMounted(() => {
     getAllUsers();
