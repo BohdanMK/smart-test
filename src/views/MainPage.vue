@@ -2,9 +2,10 @@
 
   import { ref, onMounted, watch, computed } from 'vue';
   import axios from 'axios';
-  import userList from "@/state/userList";
-  import totalPages from "@/state/totalPages";
-  import modalIsOpen from '@/state/modalState.js'
+ 
+  import { totalPages, userList , modalIsOpen } from "@/state/constantState";
+
+  import closeModal from '@/hooks/closeModal';
   import { BASE_URL } from '@/constants/api';
 
   import UserList from '@/components/UserList.vue';

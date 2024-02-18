@@ -1,6 +1,5 @@
 import axios from "axios";
-import totalPages from "@/state/totalPages";
-import userList from "@/state/userList";
+import { totalPages, userList } from "@/state/constantState";
 import { BASE_URL } from '@/constants/api';
 
 const getAllUsers = async (page = 1) => {

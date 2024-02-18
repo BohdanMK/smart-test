@@ -1,5 +1,5 @@
 import axios from "axios";
-import userList from "@/state/userList";
+import { userList } from "@/state/constantState";
 import { BASE_URL } from '@/constants/api';
 
 const handleEditUser = async (userData) => {

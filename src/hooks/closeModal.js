@@ -1,4 +1,4 @@
-import modalIsOpen from '@/state/modalState.js'
+import { modalIsOpen } from '@/state/constantState.js'
 
 const closeModal = () => {
 
